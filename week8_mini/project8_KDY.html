@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="doyoung">
+
+<title>project8_KDY</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="project8_KDY_files/libs/clipboard/clipboard.min.js"></script>
+<script src="project8_KDY_files/libs/quarto-html/quarto.js"></script>
+<script src="project8_KDY_files/libs/quarto-html/popper.min.js"></script>
+<script src="project8_KDY_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="project8_KDY_files/libs/quarto-html/anchor.min.js"></script>
+<link href="project8_KDY_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="project8_KDY_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="project8_KDY_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="project8_KDY_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="project8_KDY_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">project8_KDY</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>doyoung </p>
+          </div>
+  </div>
+    
+    
+  </div>
+  
+
+</header>
+
+<section id="데이터-및-변수-설명" class="level2">
+<h2 class="anchored" data-anchor-id="데이터-및-변수-설명">데이터 및 변수 설명</h2>
+<section id="cardiovascular-disease-심혈관-질환" class="level3">
+<h3 class="anchored" data-anchor-id="cardiovascular-disease-심혈관-질환">Cardiovascular Disease : 심혈관 질환</h3>
+<p>남아프리카 공화국 웨스턴 케이프의 심장병 고위험 지역에 있는 남성의 회고전 샘플.</p>
+<section id="sbp-수축기-혈압" class="level5">
+<h5 class="anchored" data-anchor-id="sbp-수축기-혈압">sbp : 수축기 혈압</h5>
+</section>
+<section id="tobacco-누적-담배kg" class="level5">
+<h5 class="anchored" data-anchor-id="tobacco-누적-담배kg">tobacco : 누적 담배(kg)</h5>
+</section>
+<section id="ldl-저밀도-지방단백질" class="level5">
+<h5 class="anchored" data-anchor-id="ldl-저밀도-지방단백질">ldl : 저밀도 지방단백질</h5>
+</section>
+<section id="adiposity-비만도-숫자형-벡터" class="level5">
+<h5 class="anchored" data-anchor-id="adiposity-비만도-숫자형-벡터">adiposity : 비만도 숫자형 벡터</h5>
+</section>
+<section id="famhist-심장-질환의-가족력" class="level5">
+<h5 class="anchored" data-anchor-id="famhist-심장-질환의-가족력">famhist : 심장 질환의 가족력</h5>
+</section>
+<section id="typea-a형-성격-유형" class="level5">
+<h5 class="anchored" data-anchor-id="typea-a형-성격-유형">typea : A형 성격 유형</h5>
+</section>
+<section id="obesity-비만-수치형-벡터" class="level5">
+<h5 class="anchored" data-anchor-id="obesity-비만-수치형-벡터">obesity : 비만 수치형 벡터</h5>
+</section>
+<section id="alcohol-현재-알코올-소비" class="level5">
+<h5 class="anchored" data-anchor-id="alcohol-현재-알코올-소비">alcohol : 현재 알코올 소비</h5>
+</section>
+<section id="age-발병-연령" class="level5">
+<h5 class="anchored" data-anchor-id="age-발병-연령">age : 발병 연령</h5>
+</section>
+<section id="chd-반응-관상-동맥-심장-질환-발병-여부" class="level5">
+<h5 class="anchored" data-anchor-id="chd-반응-관상-동맥-심장-질환-발병-여부">chd : 반응, 관상 동맥 심장 질환 발병 여부</h5>
+</section>
+</section>
+</section>
+<section id="출처" class="level2">
+<h2 class="anchored" data-anchor-id="출처">출처</h2>
+<section id="httpswww.kaggle.comdatasetsyassinehamdaoui1cardiovascular-diseasedatasetid552987sortbyvotecount" class="level6">
+<h6 class="anchored" data-anchor-id="httpswww.kaggle.comdatasetsyassinehamdaoui1cardiovascular-diseasedatasetid552987sortbyvotecount">https://www.kaggle.com/datasets/yassinehamdaoui1/cardiovascular-disease?datasetId=552987&amp;sortBy=voteCount</h6>
+</section>
+</section>
+<section id="데이터-로딩-및-속성-확인" class="level2">
+<h2 class="anchored" data-anchor-id="데이터-로딩-및-속성-확인">데이터 로딩 및 속성 확인</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>DF <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">'./Data/cardiovascular.txt'</span>, <span class="at">sep=</span><span class="st">';'</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> DF[, <span class="sc">-</span><span class="dv">1</span>]</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>'data.frame':   462 obs. of  10 variables:
+ $ sbp      : int  160 144 118 170 134 132 142 114 114 132 ...
+ $ tobacco  : num  12 0.01 0.08 7.5 13.6 6.2 4.05 4.08 0 0 ...
+ $ ldl      : num  5.73 4.41 3.48 6.41 3.5 6.47 3.38 4.59 3.83 5.8 ...
+ $ adiposity: num  23.1 28.6 32.3 38 27.8 ...
+ $ famhist  : chr  "Present" "Absent" "Present" "Present" ...
+ $ typea    : int  49 55 52 51 60 62 59 62 49 69 ...
+ $ obesity  : num  25.3 28.9 29.1 32 26 ...
+ $ alcohol  : num  97.2 2.06 3.81 24.26 57.34 ...
+ $ age      : int  52 63 46 58 49 45 38 58 29 53 ...
+ $ chd      : int  1 1 0 1 1 0 0 1 0 1 ...</code></pre>
+</div>
+</div>
+</section>
+<section id="상위-데이터-확인" class="level2">
+<h2 class="anchored" data-anchor-id="상위-데이터-확인">상위 데이터 확인</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df, <span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   sbp tobacco  ldl adiposity famhist typea obesity alcohol age chd
+1  160   12.00 5.73     23.11 Present    49   25.30   97.20  52   1
+2  144    0.01 4.41     28.61  Absent    55   28.87    2.06  63   1
+3  118    0.08 3.48     32.28 Present    52   29.14    3.81  46   0
+4  170    7.50 6.41     38.03 Present    51   31.99   24.26  58   1
+5  134   13.60 3.50     27.78 Present    60   25.99   57.34  49   1
+6  132    6.20 6.47     36.21 Present    62   30.77   14.14  45   0
+7  142    4.05 3.38     16.20  Absent    59   20.81    2.62  38   0
+8  114    4.08 4.59     14.60 Present    62   23.11    6.72  58   1
+9  114    0.00 3.83     19.40 Present    49   24.86    2.49  29   0
+10 132    0.00 5.80     30.96 Present    69   30.11    0.00  53   1</code></pre>
+</div>
+</div>
+</section>
+<section id="결측치-확인" class="level2">
+<h2 class="anchored" data-anchor-id="결측치-확인">결측치 확인</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">is.na</span>(df))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0</code></pre>
+</div>
+</div>
+</section>
+<section id="기술통계-확인" class="level2">
+<h2 class="anchored" data-anchor-id="기술통계-확인">기술통계 확인</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>      sbp           tobacco             ldl           adiposity    
+ Min.   :101.0   Min.   : 0.0000   Min.   : 0.980   Min.   : 6.74  
+ 1st Qu.:124.0   1st Qu.: 0.0525   1st Qu.: 3.283   1st Qu.:19.77  
+ Median :134.0   Median : 2.0000   Median : 4.340   Median :26.11  
+ Mean   :138.3   Mean   : 3.6356   Mean   : 4.740   Mean   :25.41  
+ 3rd Qu.:148.0   3rd Qu.: 5.5000   3rd Qu.: 5.790   3rd Qu.:31.23  
+ Max.   :218.0   Max.   :31.2000   Max.   :15.330   Max.   :42.49  
+   famhist              typea         obesity         alcohol      
+ Length:462         Min.   :13.0   Min.   :14.70   Min.   :  0.00  
+ Class :character   1st Qu.:47.0   1st Qu.:22.98   1st Qu.:  0.51  
+ Mode  :character   Median :53.0   Median :25.80   Median :  7.51  
+                    Mean   :53.1   Mean   :26.04   Mean   : 17.04  
+                    3rd Qu.:60.0   3rd Qu.:28.50   3rd Qu.: 23.89  
+                    Max.   :78.0   Max.   :46.58   Max.   :147.19  
+      age             chd        
+ Min.   :15.00   Min.   :0.0000  
+ 1st Qu.:31.00   1st Qu.:0.0000  
+ Median :45.00   Median :0.0000  
+ Mean   :42.82   Mean   :0.3463  
+ 3rd Qu.:55.00   3rd Qu.:1.0000  
+ Max.   :64.00   Max.   :1.0000  </code></pre>
+</div>
+</div>
+</section>
+<section id="범주형으로-형-변환-및-확인" class="level2">
+<h2 class="anchored" data-anchor-id="범주형으로-형-변환-및-확인">범주형으로 형 변환 및 확인</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>famhist <span class="ot">&lt;-</span> <span class="fu">factor</span>(<span class="fu">ifelse</span>(df<span class="sc">$</span>famhist <span class="sc">==</span> <span class="st">'Absent'</span>, <span class="dv">1</span>, <span class="dv">2</span>),</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">levels=</span><span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">'유전x'</span>, <span class="st">'유전'</span>))</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>chd <span class="ot">&lt;-</span> <span class="fu">factor</span>(<span class="fu">ifelse</span>(df<span class="sc">$</span>chd <span class="sc">==</span> <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>),</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">'미발병'</span>, <span class="st">'발병'</span>))</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>'data.frame':   462 obs. of  10 variables:
+ $ sbp      : int  160 144 118 170 134 132 142 114 114 132 ...
+ $ tobacco  : num  12 0.01 0.08 7.5 13.6 6.2 4.05 4.08 0 0 ...
+ $ ldl      : num  5.73 4.41 3.48 6.41 3.5 6.47 3.38 4.59 3.83 5.8 ...
+ $ adiposity: num  23.1 28.6 32.3 38 27.8 ...
+ $ famhist  : Factor w/ 2 levels "유전x","유전": 2 1 2 2 2 2 1 2 2 2 ...
+ $ typea    : int  49 55 52 51 60 62 59 62 49 69 ...
+ $ obesity  : num  25.3 28.9 29.1 32 26 ...
+ $ alcohol  : num  97.2 2.06 3.81 24.26 57.34 ...
+ $ age      : int  52 63 46 58 49 45 38 58 29 53 ...
+ $ chd      : Factor w/ 2 levels "미발병","발병": 2 2 1 2 2 1 1 2 1 2 ...</code></pre>
+</div>
+</div>
+</section>
+<section id="두-범주형-변수-간의-chi-square-test카이스퀘어-검정" class="level2">
+<h2 class="anchored" data-anchor-id="두-범주형-변수-간의-chi-square-test카이스퀘어-검정">두 범주형 변수 간의 chi-square test(카이스퀘어 검정)</h2>
+<section id="카이스퀘어-분석을-위한-교차표-만들기" class="level3">
+<h3 class="anchored" data-anchor-id="카이스퀘어-분석을-위한-교차표-만들기">카이스퀘어 분석을 위한 교차표 만들기</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>tabX <span class="ot">&lt;-</span> <span class="fu">table</span>(df[, <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">10</span>)])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="심혈관-질환-발병률과-가족력-간의-관계-파악을-위한-막대그래프-그리기" class="level2">
+<h2 class="anchored" data-anchor-id="심혈관-질환-발병률과-가족력-간의-관계-파악을-위한-막대그래프-그리기">심혈관 질환 발병률과 가족력 간의 관계 파악을 위한 막대그래프 그리기</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(tabX, <span class="at">las=</span><span class="dv">1</span>, </span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>        <span class="at">col =</span> <span class="fu">c</span>(<span class="st">'yellowgreen'</span>, <span class="st">'lightsalmon'</span>),</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">main =</span> <span class="st">'Frequency of tabX'</span>)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="dv">2</span>, <span class="dv">300</span>, <span class="fu">rownames</span>(tabX),</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">fill =</span> <span class="fu">c</span>(<span class="st">'yellowgreen'</span>, <span class="st">'lightsalmon'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="project8_KDY_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="심혈관-질환-발병률-차이가-있는지-확인하기-위한-독립성-검정" class="level2">
+<h2 class="anchored" data-anchor-id="심혈관-질환-발병률-차이가-있는지-확인하기-위한-독립성-검정">심혈관 질환 발병률 차이가 있는지 확인하기 위한 독립성 검정</h2>
+<section id="검정-결과-p-값이-유의수준-0.05에-비해-매우-작으므로-가족력과-발병률-간에-관계가-없다는-귀무가설을-기각할-수-있다." class="level4">
+<h4 class="anchored" data-anchor-id="검정-결과-p-값이-유의수준-0.05에-비해-매우-작으므로-가족력과-발병률-간에-관계가-없다는-귀무가설을-기각할-수-있다.">검정 결과 p-값이 유의수준 0.05에 비해 매우 작으므로 가족력과 발병률 간에 관계가 없다는 귀무가설을 기각할 수 있다.</h4>
+</section>
+<section id="즉-가족력에-따라-심혈관-질환-발병률의-차이가-있다." class="level4">
+<h4 class="anchored" data-anchor-id="즉-가족력에-따라-심혈관-질환-발병률의-차이가-있다.">즉, 가족력에 따라 심혈관 질환 발병률의 차이가 있다.</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(tabX)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Pearson's Chi-squared test with Yates' continuity correction
+
+data:  tabX
+X-squared = 33.123, df = 1, p-value = 8.653e-09</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="두-범주형-변수-간의-관련성의-강도를-평가하기" class="level2">
+<h2 class="anchored" data-anchor-id="두-범주형-변수-간의-관련성의-강도를-평가하기">두 범주형 변수 간의 관련성의 강도를 평가하기</h2>
+<section id="assocstats-함수는-관련성의-강도를-측정하는-지표를-계산한다." class="level3">
+<h3 class="anchored" data-anchor-id="assocstats-함수는-관련성의-강도를-측정하는-지표를-계산한다.">assocstats() 함수는 관련성의 강도를 측정하는 지표를 계산한다.</h3>
+</section>
+<section id="이-지표들은-그-값이-클수록-두-변수-간의-관련성이-크다는-것을-나타낸다." class="level3">
+<h3 class="anchored" data-anchor-id="이-지표들은-그-값이-클수록-두-변수-간의-관련성이-크다는-것을-나타낸다.">이 지표들은 그 값이 클수록 두 변수 간의 관련성이 크다는 것을 나타낸다.</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(vcd)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: grid</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">assocstats</span>(tabX)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                    X^2 df   P(&gt; X^2)
+Likelihood Ratio 34.214  1 4.9371e-09
+Pearson          34.274  1 4.7865e-09
+
+Phi-Coefficient   : 0.272 
+Contingency Coeff.: 0.263 
+Cramer's V        : 0.272 </code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="두-범주형-변수-간의-관계를-모자이크-플롯으로-시각화하기" class="level2">
+<h2 class="anchored" data-anchor-id="두-범주형-변수-간의-관계를-모자이크-플롯으로-시각화하기">두 범주형 변수 간의 관계를 모자이크 플롯으로 시각화하기</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mosaic</span>(tabX, <span class="at">shade=</span>T, <span class="at">legend =</span> T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="project8_KDY_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="cardiovascular-disease-데이터셋의-수치형-변수-간-상관관계와-산점도-행렬-그래프" class="level2">
+<h2 class="anchored" data-anchor-id="cardiovascular-disease-데이터셋의-수치형-변수-간-상관관계와-산점도-행렬-그래프">Cardiovascular Disease 데이터셋의 수치형 변수 간 상관관계와 산점도 행렬 그래프</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>'data.frame':   462 obs. of  10 variables:
+ $ sbp      : int  160 144 118 170 134 132 142 114 114 132 ...
+ $ tobacco  : num  12 0.01 0.08 7.5 13.6 6.2 4.05 4.08 0 0 ...
+ $ ldl      : num  5.73 4.41 3.48 6.41 3.5 6.47 3.38 4.59 3.83 5.8 ...
+ $ adiposity: num  23.1 28.6 32.3 38 27.8 ...
+ $ famhist  : Factor w/ 2 levels "유전x","유전": 2 1 2 2 2 2 1 2 2 2 ...
+ $ typea    : int  49 55 52 51 60 62 59 62 49 69 ...
+ $ obesity  : num  25.3 28.9 29.1 32 26 ...
+ $ alcohol  : num  97.2 2.06 3.81 24.26 57.34 ...
+ $ age      : int  52 63 46 58 49 45 38 58 29 53 ...
+ $ chd      : Factor w/ 2 levels "미발병","발병": 2 2 1 2 2 1 1 2 1 2 ...</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(df[, <span class="sc">-</span><span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">10</span>)])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                  sbp     tobacco         ldl   adiposity       typea
+sbp        1.00000000  0.21224652  0.15829633  0.35650008 -0.05745431
+tobacco    0.21224652  1.00000000  0.15890546  0.28664037 -0.01460788
+ldl        0.15829633  0.15890546  1.00000000  0.44043175  0.04404758
+adiposity  0.35650008  0.28664037  0.44043175  1.00000000 -0.04314364
+typea     -0.05745431 -0.01460788  0.04404758 -0.04314364  1.00000000
+obesity    0.23806661  0.12452941  0.33050586  0.71655625  0.07400610
+alcohol    0.14009559  0.20081339 -0.03340340  0.10033013  0.03949794
+age        0.38877060  0.45033016  0.31179923  0.62595442 -0.10260632
+             obesity     alcohol        age
+sbp       0.23806661  0.14009559  0.3887706
+tobacco   0.12452941  0.20081339  0.4503302
+ldl       0.33050586 -0.03340340  0.3117992
+adiposity 0.71655625  0.10033013  0.6259544
+typea     0.07400610  0.03949794 -0.1026063
+obesity   1.00000000  0.05161957  0.2917771
+alcohol   0.05161957  1.00000000  0.1011246
+age       0.29177713  0.10112465  1.0000000</code></pre>
+</div>
+</div>
+</section>
+<section id="상관관계-그래프-1" class="level2">
+<h2 class="anchored" data-anchor-id="상관관계-그래프-1">상관관계 그래프 1</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(psych)</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">pairs.panels</span>(df[, <span class="sc">-</span><span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">10</span>)],</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">bg=</span><span class="st">'red'</span>,</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">pch=</span><span class="dv">21</span>,</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>             <span class="at">hist.col =</span> <span class="st">'gold'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="project8_KDY_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="상관관계-그래프-2" class="level2">
+<h2 class="anchored" data-anchor-id="상관관계-그래프-2">상관관계 그래프 2</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(corrgram)</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">corrgram</span>(df[, <span class="sc">-</span><span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">10</span>)],</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">order =</span> T,</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">lower.panel =</span> panel.shade,</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">upper.panel =</span> panel.pie,</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>         <span class="at">text.panel =</span> panel.txt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="project8_KDY_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="상관관계-그래프-3" class="level2">
+<h2 class="anchored" data-anchor-id="상관관계-그래프-3">상관관계 그래프 3</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>cols <span class="ot">&lt;-</span> <span class="fu">colorRampPalette</span>(<span class="fu">c</span>(<span class="st">'darkgoldenrod4'</span>, <span class="st">'burlywood1'</span>, <span class="st">'darkkhaki'</span>, <span class="st">'darkgreen'</span>))</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">corrgram</span>(df[, <span class="sc">-</span><span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">10</span>)],</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">order =</span> F,</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">col.regions=</span>cols,</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">lower.panel=</span>panel.pie,</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>         <span class="at">upper.panel=</span>panel.conf,</span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>         <span class="at">text.panel=</span>panel.txt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in par(usr): argument 1 does not name a graphical parameter
+
+Warning in par(usr): argument 1 does not name a graphical parameter
+
+Warning in par(usr): argument 1 does not name a graphical parameter
+
+Warning in par(usr): argument 1 does not name a graphical parameter
+
+Warning in par(usr): argument 1 does not name a graphical parameter
+
+Warning in par(usr): argument 1 does not name a graphical parameter
+
+Warning in par(usr): argument 1 does not name a graphical parameter
+
+Warning in par(usr): argument 1 does not name a graphical parameter
+
+Warning in par(usr): argument 1 does not name a graphical parameter
+
+Warning in par(usr): argument 1 does not name a graphical parameter
+
+Warning in par(usr): argument 1 does not name a graphical parameter
+
+Warning in par(usr): argument 1 does not name a graphical parameter
+
+Warning in par(usr): argument 1 does not name a graphical parameter
+
+Warning in par(usr): argument 1 does not name a graphical parameter
+
+Warning in par(usr): argument 1 does not name a graphical parameter
+
+Warning in par(usr): argument 1 does not name a graphical parameter
+
+Warning in par(usr): argument 1 does not name a graphical parameter
+
+Warning in par(usr): argument 1 does not name a graphical parameter
+
+Warning in par(usr): argument 1 does not name a graphical parameter
+
+Warning in par(usr): argument 1 does not name a graphical parameter
+
+Warning in par(usr): argument 1 does not name a graphical parameter
+
+Warning in par(usr): argument 1 does not name a graphical parameter
+
+Warning in par(usr): argument 1 does not name a graphical parameter
+
+Warning in par(usr): argument 1 does not name a graphical parameter
+
+Warning in par(usr): argument 1 does not name a graphical parameter
+
+Warning in par(usr): argument 1 does not name a graphical parameter
+
+Warning in par(usr): argument 1 does not name a graphical parameter
+
+Warning in par(usr): argument 1 does not name a graphical parameter</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="project8_KDY_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="산점도-행렬-그래프" class="level2">
+<h2 class="anchored" data-anchor-id="산점도-행렬-그래프">산점도 행렬 그래프</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(car)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: carData</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'car'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:psych':
+
+    logit</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Package 'sm', version 2.2-5.7: type help(sm) for summary information</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scatterplotMatrix</span>(df[, <span class="sc">-</span><span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">10</span>)], <span class="at">pch =</span> <span class="dv">19</span>, <span class="at">col =</span> <span class="st">'steelblue'</span>, <span class="at">cex =</span> <span class="fl">1.2</span>,</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>                  <span class="at">regLine =</span> <span class="fu">list</span>(<span class="at">method =</span> lm, <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">col =</span> <span class="st">'tomato'</span>),</span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>                  <span class="at">smooth =</span> <span class="fu">list</span>(<span class="at">smoother =</span> loessLine, <span class="at">spread =</span> F,</span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>                                <span class="at">lwd.smooth =</span> <span class="dv">2</span>, <span class="at">col.smooth =</span> <span class="st">'orange'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="project8_KDY_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="이항-로지스틱-회귀분석-binomial-logistic-regression-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="이항-로지스틱-회귀분석-binomial-logistic-regression-analysis">이항 로지스틱 회귀분석: binomial logistic regression analysis</h2>
+<section id="이항-로지스틱회귀분석은-결과변수종속변수가-이분형-범주를-가질-때-예측변수독립변수로부터-결과변수의-범주를-예측한다." class="level4">
+<h4 class="anchored" data-anchor-id="이항-로지스틱회귀분석은-결과변수종속변수가-이분형-범주를-가질-때-예측변수독립변수로부터-결과변수의-범주를-예측한다.">이항 로지스틱회귀분석은 결과변수(종속변수)가 이분형 범주를 가질 때 예측변수(독립변수)로부터 결과변수의 범주를 예측한다.</h4>
+</section>
+<section id="결과변수의-예측값은-항상-0고-1-사이의-확률값을-갖게-되며-이-값이-일정-기준값0.5보다-크면-사건이-발생하고-기준값보다-작으면-사건이-발생하지-않는-것으로-예측한다" class="level4">
+<h4 class="anchored" data-anchor-id="결과변수의-예측값은-항상-0고-1-사이의-확률값을-갖게-되며-이-값이-일정-기준값0.5보다-크면-사건이-발생하고-기준값보다-작으면-사건이-발생하지-않는-것으로-예측한다">결과변수의 예측값은 항상 0고 1 사이의 확률값을 갖게 되며, 이 값이 일정 기준값(0.5)보다 크면 사건이 발생하고 기준값보다 작으면 사건이 발생하지 않는 것으로 예측한다</h4>
+</section>
+</section>
+<section id="glm함수를-이용하여-로지스틱-회귀분석-수행" class="level2">
+<h2 class="anchored" data-anchor-id="glm함수를-이용하여-로지스틱-회귀분석-수행">glm()함수를 이용하여 로지스틱 회귀분석 수행</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>df.logit <span class="ot">&lt;-</span> <span class="fu">glm</span>(chd <span class="sc">~</span> ., <span class="at">data =</span> df, <span class="at">family =</span> <span class="fu">binomial</span>(<span class="at">link=</span><span class="st">'logit'</span>))</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(df.logit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+glm(formula = chd ~ ., family = binomial(link = "logit"), data = df)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-1.7781  -0.8213  -0.4387   0.8889   2.5435  
+
+Coefficients:
+              Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept) -6.1507209  1.3082600  -4.701 2.58e-06 ***
+sbp          0.0065040  0.0057304   1.135 0.256374    
+tobacco      0.0793764  0.0266028   2.984 0.002847 ** 
+ldl          0.1739239  0.0596617   2.915 0.003555 ** 
+adiposity    0.0185866  0.0292894   0.635 0.525700    
+famhist유전  0.9253704  0.2278940   4.061 4.90e-05 ***
+typea        0.0395950  0.0123202   3.214 0.001310 ** 
+obesity     -0.0629099  0.0442477  -1.422 0.155095    
+alcohol      0.0001217  0.0044832   0.027 0.978350    
+age          0.0452253  0.0121298   3.728 0.000193 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 596.11  on 461  degrees of freedom
+Residual deviance: 472.14  on 452  degrees of freedom
+AIC: 492.14
+
+Number of Fisher Scoring iterations: 5</code></pre>
+</div>
+</div>
+</section>
+<section id="통계적으로-유의미한-변수만-로지스틱-회귀분석-수행" class="level2">
+<h2 class="anchored" data-anchor-id="통계적으로-유의미한-변수만-로지스틱-회귀분석-수행">통계적으로 유의미한 변수만 로지스틱 회귀분석 수행</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>df.logit1 <span class="ot">&lt;-</span> <span class="fu">glm</span>(chd <span class="sc">~</span> tobacco <span class="sc">+</span> ldl <span class="sc">+</span> famhist <span class="sc">+</span> typea <span class="sc">+</span> age, <span class="at">data =</span> df, <span class="at">family =</span> <span class="fu">binomial</span>(<span class="at">link=</span><span class="st">'logit'</span>))</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(df.logit1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+glm(formula = chd ~ tobacco + ldl + famhist + typea + age, family = binomial(link = "logit"), 
+    data = df)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-1.9165  -0.8054  -0.4430   0.9329   2.6139  
+
+Coefficients:
+            Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept) -6.44644    0.92087  -7.000 2.55e-12 ***
+tobacco      0.08038    0.02588   3.106  0.00190 ** 
+ldl          0.16199    0.05497   2.947  0.00321 ** 
+famhist유전  0.90818    0.22576   4.023 5.75e-05 ***
+typea        0.03712    0.01217   3.051  0.00228 ** 
+age          0.05046    0.01021   4.944 7.65e-07 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 596.11  on 461  degrees of freedom
+Residual deviance: 475.69  on 456  degrees of freedom
+AIC: 487.69
+
+Number of Fisher Scoring iterations: 5</code></pre>
+</div>
+</div>
+</section>
+<section id="오즈비로-심혈관-질환-발병률-확인-famhist-값이-1-증가하면-심혈관-질환-발병률이-약-2.47배-증가" class="level2">
+<h2 class="anchored" data-anchor-id="오즈비로-심혈관-질환-발병률-확인-famhist-값이-1-증가하면-심혈관-질환-발병률이-약-2.47배-증가">오즈비로 심혈관 질환 발병률 확인: famhist 값이 1 증가하면 심혈관 질환 발병률이 약 2.47배 증가</h2>
+<section id="오즈의-변화-비율은-다른-독립변수가-동일하다는-가정하에서-특정-독립변수-한-단위-증가에-따른-사건발생확률-대-미발생확률-비율의-변화율을-의미" class="level4">
+<h4 class="anchored" data-anchor-id="오즈의-변화-비율은-다른-독립변수가-동일하다는-가정하에서-특정-독립변수-한-단위-증가에-따른-사건발생확률-대-미발생확률-비율의-변화율을-의미">오즈의 변화 비율은 다른 독립변수가 동일하다는 가정하에서 특정 독립변수 한 단위 증가에 따른 사건발생확률 대 미발생확률 비율의 변화율을 의미</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">coef</span>(df.logit1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>(Intercept)     tobacco         ldl famhist유전       typea         age 
+-6.44644451  0.08037533  0.16199164  0.90817526  0.03711521  0.05046038 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">exp</span>(<span class="fu">coef</span>(df.logit1))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>(Intercept)     tobacco         ldl famhist유전       typea         age 
+0.001586152 1.083693731 1.175850406 2.479793436 1.037812583 1.051755195 </code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="분류classification-계산된-예측확률-49를-판정기준으로-심혈관-질환-발병과-미발병으로-분류" class="level2">
+<h2 class="anchored" data-anchor-id="분류classification-계산된-예측확률-49를-판정기준으로-심혈관-질환-발병과-미발병으로-분류">분류(classification): 계산된 예측확률 49%를 판정기준으로 심혈관 질환 발병과 미발병으로 분류</h2>
+</section>
+<section id="예측-확률을-최적의-임계점이-아닌-임의로-수정한-값으로-발표를-하였고-과적합이라는-평가를-받았습니다.-임의로-값을-수정하는-것은-아무-잘못된-판단인-것을-알았습니다" class="level2">
+<h2 class="anchored" data-anchor-id="예측-확률을-최적의-임계점이-아닌-임의로-수정한-값으로-발표를-하였고-과적합이라는-평가를-받았습니다.-임의로-값을-수정하는-것은-아무-잘못된-판단인-것을-알았습니다">예측 확률을 최적의 임계점이 아닌 임의로 수정한 값으로 발표를 하였고, 과적합이라는 평가를 받았습니다. 임의로 값을 수정하는 것은 아무 잘못된 판단인 것을 알았습니다!!</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>pred <span class="ot">&lt;-</span> <span class="fu">factor</span>(<span class="fu">ifelse</span>(df.logit1<span class="sc">$</span>fitted.values <span class="sc">&gt;</span> <span class="fl">0.49</span>,</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>                         <span class="st">'Yes'</span>, <span class="st">'No'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="최적의-임계점-찾기" class="level2">
+<h2 class="anchored" data-anchor-id="최적의-임계점-찾기">최적의 임계점 찾기</h2>
+<section id="최적의-임계점은-0.5가-나오지만-이-데이터는-의료-데이터이므로-다른-값이-더욱-최적의-임계점이-될-수-있다." class="level3">
+<h3 class="anchored" data-anchor-id="최적의-임계점은-0.5가-나오지만-이-데이터는-의료-데이터이므로-다른-값이-더욱-최적의-임계점이-될-수-있다.">최적의 임계점은 0.5가 나오지만 이 데이터는 의료 데이터이므로 다른 값이 더욱 최적의 임계점이 될 수 있다.</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(mlbench)</span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pROC)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Type 'citation("pROC")' for a citation.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'pROC'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:stats':
+
+    cov, smooth, var</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>pred <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(df<span class="sc">$</span>pred)</span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>chd <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(df<span class="sc">$</span>chd)</span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>pred <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(df<span class="sc">$</span>pred <span class="sc">==</span> <span class="dv">1</span>, df<span class="sc">$</span>pred <span class="ot">&lt;-</span> <span class="dv">0</span>, df<span class="sc">$</span>pred <span class="ot">&lt;-</span> <span class="dv">1</span>)</span>
+<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>chd <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(df<span class="sc">$</span>chd <span class="sc">==</span> <span class="dv">1</span>, df<span class="sc">$</span>chd <span class="ot">&lt;-</span> <span class="dv">0</span>, df<span class="sc">$</span>chd <span class="ot">&lt;-</span> <span class="dv">1</span>)</span>
+<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot.roc</span>(df<span class="sc">$</span>pred, df<span class="sc">$</span>chd, <span class="at">print.thres=</span>T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Setting levels: control = 0, case = 1</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Setting direction: controls &lt; cases</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="project8_KDY_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+</section>
+<section id="혼돈행렬에서-파생하는-지표-알아보기" class="level2">
+<h2 class="anchored" data-anchor-id="혼돈행렬에서-파생하는-지표-알아보기">혼돈행렬에서 파생하는 지표 알아보기</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(caret)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: ggplot2</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'ggplot2'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:psych':
+
+    %+%, alpha</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: lattice</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'lattice'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:corrgram':
+
+    panel.fill</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>pred <span class="ot">&lt;-</span> <span class="fu">factor</span>(df<span class="sc">$</span>pred)</span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>chd <span class="ot">&lt;-</span> <span class="fu">factor</span>(df<span class="sc">$</span>chd)</span>
+<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a><span class="fu">confusionMatrix</span>(df<span class="sc">$</span>pred, df<span class="sc">$</span>chd)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Confusion Matrix and Statistics
+
+          Reference
+Prediction   0   1
+         0 254  71
+         1  48  89
+                                       
+               Accuracy : 0.7424       
+                 95% CI : (0.7, 0.7817)
+    No Information Rate : 0.6537       
+    P-Value [Acc &gt; NIR] : 2.562e-05    
+                                       
+                  Kappa : 0.4112       
+                                       
+ Mcnemar's Test P-Value : 0.04372      
+                                       
+            Sensitivity : 0.8411       
+            Specificity : 0.5563       
+         Pos Pred Value : 0.7815       
+         Neg Pred Value : 0.6496       
+             Prevalence : 0.6537       
+         Detection Rate : 0.5498       
+   Detection Prevalence : 0.7035       
+      Balanced Accuracy : 0.6987       
+                                       
+       'Positive' Class : 0            
+                                       </code></pre>
+</div>
+</div>
+</section>
+<section id="혼돈행렬" class="level2">
+<h2 class="anchored" data-anchor-id="혼돈행렬">혼돈행렬</h2>
+<section id="이진-분류기의-분류-결과를-2x2-행렬로-표시한-행렬" class="level3">
+<h3 class="anchored" data-anchor-id="이진-분류기의-분류-결과를-2x2-행렬로-표시한-행렬">이진 분류기의 분류 결과를 2X2 행렬로 표시한 행렬</h3>
+</section>
+<section id="이진-분류기가-분류예측할-때-얼마나-많이-헷갈렸는가를-나타냄" class="level3">
+<h3 class="anchored" data-anchor-id="이진-분류기가-분류예측할-때-얼마나-많이-헷갈렸는가를-나타냄">이진 분류기가 분류(예측)할 때, 얼마나 많이 헷갈렸는가를 나타냄</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>tab <span class="ot">&lt;-</span> <span class="fu">table</span>(<span class="at">actual =</span> df<span class="sc">$</span>chd, <span class="at">predict =</span> df<span class="sc">$</span>pred)</span>
+<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a>tab</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>      predict
+actual   0   1
+     0 254  48
+     1  71  89</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>TP <span class="ot">&lt;-</span> tab[<span class="dv">2</span>, <span class="dv">2</span>]</span>
+<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a>TN <span class="ot">&lt;-</span> tab[<span class="dv">1</span>, <span class="dv">1</span>]</span>
+<span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a>FP <span class="ot">&lt;-</span> tab[<span class="dv">1</span>, <span class="dv">2</span>]</span>
+<span id="cb62-4"><a href="#cb62-4" aria-hidden="true" tabindex="-1"></a>FN <span class="ot">&lt;-</span> tab[<span class="dv">2</span>, <span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="분류-모델의-성능-평가-지표" class="level2">
+<h2 class="anchored" data-anchor-id="분류-모델의-성능-평가-지표">분류 모델의 성능 평가 지표</h2>
+<section id="accuracy-정확도" class="level3">
+<h3 class="anchored" data-anchor-id="accuracy-정확도">accuracy : 정확도</h3>
+</section>
+<section id="precision-정밀도" class="level3">
+<h3 class="anchored" data-anchor-id="precision-정밀도">precision : 정밀도</h3>
+</section>
+<section id="recall-재현율" class="level3">
+<h3 class="anchored" data-anchor-id="recall-재현율">recall : 재현율</h3>
+</section>
+<section id="f1.score-정밀도와-재현율의-조화평균" class="level3">
+<h3 class="anchored" data-anchor-id="f1.score-정밀도와-재현율의-조화평균">F1.score : 정밀도와 재현율의 조화평균</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a>accuracy <span class="ot">&lt;-</span> (TP <span class="sc">+</span> TN) <span class="sc">/</span> (TP <span class="sc">+</span> TN <span class="sc">+</span> FP <span class="sc">+</span> FN)</span>
+<span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a>precision <span class="ot">&lt;-</span> TP <span class="sc">/</span> (TP <span class="sc">+</span> FP)</span>
+<span id="cb63-3"><a href="#cb63-3" aria-hidden="true" tabindex="-1"></a>recall <span class="ot">&lt;-</span> TP <span class="sc">/</span> (TP <span class="sc">+</span> FN)</span>
+<span id="cb63-4"><a href="#cb63-4" aria-hidden="true" tabindex="-1"></a>F1.score <span class="ot">&lt;-</span> (<span class="dv">2</span> <span class="sc">*</span> precision <span class="sc">*</span> recall) <span class="sc">/</span> (precision <span class="sc">+</span> recall)</span>
+<span id="cb63-5"><a href="#cb63-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-6"><a href="#cb63-6" aria-hidden="true" tabindex="-1"></a>accuracy</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.7424242</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a>precision</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.649635</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a>recall</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.55625</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a>F1.score</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.5993266</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="roc-곡선-이진-분류의-결과에서-fp-비율과-tp-비율의-관계를-그린-곡선" class="level2">
+<h2 class="anchored" data-anchor-id="roc-곡선-이진-분류의-결과에서-fp-비율과-tp-비율의-관계를-그린-곡선">ROC 곡선: 이진 분류의 결과에서 FP 비율과 TP 비율의 관계를 그린 곡선</h2>
+<section id="auc-roc-곡선의-하부-면적으로-표현하는-성능-평가-지표" class="level3">
+<h3 class="anchored" data-anchor-id="auc-roc-곡선의-하부-면적으로-표현하는-성능-평가-지표">AUC : ROC 곡선의 하부 면적으로 표현하는 성능 평가 지표</h3>
+</section>
+<section id="auc가-1에-가까울수록-좋은-분류기로-판단할-수-있다." class="level3">
+<h3 class="anchored" data-anchor-id="auc가-1에-가까울수록-좋은-분류기로-판단할-수-있다.">AUC가 1에 가까울수록 좋은 분류기로 판단할 수 있다.</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="fu">roc</span>(chd <span class="sc">~</span> df.logit<span class="sc">$</span>fitted.values, <span class="at">data =</span> df,</span>
+<span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot =</span> T, <span class="at">col =</span> <span class="st">'tomato'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Setting levels: control = 0, case = 1</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Setting direction: controls &lt; cases</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="project8_KDY_files/figure-html/unnamed-chunk-24-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+roc.formula(formula = chd ~ df.logit$fitted.values, data = df,     plot = T, col = "tomato")
+
+Data: df.logit$fitted.values in 302 controls (chd 0) &lt; 160 cases (chd 1).
+Area under the curve: 0.7948</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="통계적으로-유의미한-변수들만-roc-곡선-그리기" class="level2">
+<h2 class="anchored" data-anchor-id="통계적으로-유의미한-변수들만-roc-곡선-그리기">통계적으로 유의미한 변수들만 ROC 곡선 그리기</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="fu">roc</span>(chd <span class="sc">~</span> df.logit1<span class="sc">$</span>fitted.values, <span class="at">data =</span> df,</span>
+<span id="cb75-2"><a href="#cb75-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot =</span> T, <span class="at">col =</span> <span class="st">'tomato'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Setting levels: control = 0, case = 1</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Setting direction: controls &lt; cases</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="project8_KDY_files/figure-html/unnamed-chunk-25-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+roc.formula(formula = chd ~ df.logit1$fitted.values, data = df,     plot = T, col = "tomato")
+
+Data: df.logit1$fitted.values in 302 controls (chd 0) &lt; 160 cases (chd 1).
+Area under the curve: 0.7922</code></pre>
+</div>
+</div>
+</section>
+<section id="결론" class="level1">
+<h1>결론</h1>
+<section id="심혈관-질환-발병률에-가장-큰-영향을-끼치는-것은-가족력이며-나이-a형-성격-유형-누적-담배-저밀도-지방단백질-순으로-영향을-끼쳤다." class="level3">
+<h3 class="anchored" data-anchor-id="심혈관-질환-발병률에-가장-큰-영향을-끼치는-것은-가족력이며-나이-a형-성격-유형-누적-담배-저밀도-지방단백질-순으로-영향을-끼쳤다.">심혈관 질환 발병률에 가장 큰 영향을 끼치는 것은 가족력이며 나이, A형 성격 유형, 누적 담배, 저밀도 지방단백질 순으로 영향을 끼쳤다.</h3>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

@@ -1,0 +1,291 @@
+---
+title: "project8_KDY"
+author: "doyoung"
+format: html
+editor: visual
+---
+
+## 데이터 및 변수 설명
+
+### Cardiovascular Disease : 심혈관 질환
+
+남아프리카 공화국 웨스턴 케이프의 심장병 고위험 지역에 있는 남성의 회고전 샘플.
+
+##### sbp : 수축기 혈압
+
+##### tobacco : 누적 담배(kg)
+
+##### ldl : 저밀도 지방단백질
+
+##### adiposity : 비만도 숫자형 벡터
+
+##### famhist : 심장 질환의 가족력
+
+##### typea : A형 성격 유형
+
+##### obesity : 비만 수치형 벡터
+
+##### alcohol : 현재 알코올 소비
+
+##### age : 발병 연령
+
+##### chd : 반응, 관상 동맥 심장 질환 발병 여부
+
+## 출처
+
+###### https://www.kaggle.com/datasets/yassinehamdaoui1/cardiovascular-disease?datasetId=552987&sortBy=voteCount
+
+## 데이터 로딩 및 속성 확인
+
+```{r}
+DF <- read.csv('./Data/cardiovascular.txt', sep=';')
+df <- DF[, -1]
+
+str(df)
+```
+
+## 상위 데이터 확인
+
+```{r}
+head(df, 10)
+```
+
+## 결측치 확인
+
+```{r}
+sum(is.na(df))
+```
+
+## 기술통계 확인
+
+```{r}
+summary(df)
+```
+
+## 범주형으로 형 변환 및 확인
+
+```{r}
+df$famhist <- factor(ifelse(df$famhist == 'Absent', 1, 2),
+                     levels=c(1, 2), labels = c('유전x', '유전'))
+df$chd <- factor(ifelse(df$chd == 0, 1, 2),
+                 levels = c(1, 2), labels = c('미발병', '발병'))
+
+str(df)
+```
+
+## 두 범주형 변수 간의 chi-square test(카이스퀘어 검정)
+
+### 카이스퀘어 분석을 위한 교차표 만들기
+
+```{r}
+tabX <- table(df[, c(5, 10)])
+```
+
+## 심혈관 질환 발병률과 가족력 간의 관계 파악을 위한 막대그래프 그리기
+
+```{r}
+barplot(tabX, las=1, 
+        col = c('yellowgreen', 'lightsalmon'),
+        main = 'Frequency of tabX')
+legend(2, 300, rownames(tabX),
+       fill = c('yellowgreen', 'lightsalmon'))
+```
+
+## 심혈관 질환 발병률 차이가 있는지 확인하기 위한 독립성 검정
+
+#### 검정 결과 p-값이 유의수준 0.05에 비해 매우 작으므로 가족력과 발병률 간에 관계가 없다는 귀무가설을 기각할 수 있다.
+
+#### 즉, 가족력에 따라 심혈관 질환 발병률의 차이가 있다.
+
+```{r}
+chisq.test(tabX)
+```
+
+## 두 범주형 변수 간의 관련성의 강도를 평가하기
+
+### assocstats() 함수는 관련성의 강도를 측정하는 지표를 계산한다.
+
+### 이 지표들은 그 값이 클수록 두 변수 간의 관련성이 크다는 것을 나타낸다.
+
+```{r}
+library(vcd)
+assocstats(tabX)
+```
+
+## 두 범주형 변수 간의 관계를 모자이크 플롯으로 시각화하기
+
+```{r}
+mosaic(tabX, shade=T, legend = T)
+```
+
+## Cardiovascular Disease 데이터셋의 수치형 변수 간 상관관계와 산점도 행렬 그래프
+
+```{r}
+str(df)
+cor(df[, -c(5, 10)])
+```
+
+## 상관관계 그래프 1
+
+```{r}
+library(psych)
+pairs.panels(df[, -c(5, 10)],
+             bg='red',
+             pch=21,
+             hist.col = 'gold')
+```
+
+## 상관관계 그래프 2
+
+```{r}
+library(corrgram)
+corrgram(df[, -c(5, 10)],
+         order = T,
+         lower.panel = panel.shade,
+         upper.panel = panel.pie,
+         text.panel = panel.txt)
+```
+
+## 상관관계 그래프 3
+
+```{r}
+cols <- colorRampPalette(c('darkgoldenrod4', 'burlywood1', 'darkkhaki', 'darkgreen'))
+corrgram(df[, -c(5, 10)],
+         order = F,
+         col.regions=cols,
+         lower.panel=panel.pie,
+         upper.panel=panel.conf,
+         text.panel=panel.txt)
+```
+
+## 산점도 행렬 그래프
+
+```{r}
+library(car)
+library(sm)
+scatterplotMatrix(df[, -c(5, 10)], pch = 19, col = 'steelblue', cex = 1.2,
+                  regLine = list(method = lm, lwd = 2, col = 'tomato'),
+                  smooth = list(smoother = loessLine, spread = F,
+                                lwd.smooth = 2, col.smooth = 'orange'))
+```
+
+## 이항 로지스틱 회귀분석: binomial logistic regression analysis
+
+#### 이항 로지스틱회귀분석은 결과변수(종속변수)가 이분형 범주를 가질 때 예측변수(독립변수)로부터 결과변수의 범주를 예측한다.
+
+#### 결과변수의 예측값은 항상 0고 1 사이의 확률값을 갖게 되며, 이 값이 일정 기준값(0.5)보다 크면 사건이 발생하고 기준값보다 작으면 사건이 발생하지 않는 것으로 예측한다
+
+## glm()함수를 이용하여 로지스틱 회귀분석 수행
+
+```{r}
+df.logit <- glm(chd ~ ., data = df, family = binomial(link='logit'))
+summary(df.logit)
+```
+
+## 통계적으로 유의미한 변수만 로지스틱 회귀분석 수행
+
+```{r}
+df.logit1 <- glm(chd ~ tobacco + ldl + famhist + typea + age, data = df, family = binomial(link='logit'))
+summary(df.logit1)
+```
+
+## 오즈비로 심혈관 질환 발병률 확인: famhist 값이 1 증가하면 심혈관 질환 발병률이 약 2.47배 증가
+
+#### 오즈의 변화 비율은 다른 독립변수가 동일하다는 가정하에서 특정 독립변수 한 단위 증가에 따른 사건발생확률 대 미발생확률 비율의 변화율을 의미
+
+```{r}
+coef(df.logit1)
+exp(coef(df.logit1))
+```
+
+## 분류(classification): 계산된 예측확률 49%를 판정기준으로 심혈관 질환 발병과 미발병으로 분류
+
+## 예측 확률을 최적의 임계점이 아닌 임의로 수정한 값으로 발표를 하였고, 과적합이라는 평가를 받았습니다. 임의로 값을 수정하는 것은 아무 잘못된 판단인 것을 알았습니다!!
+
+```{r}
+df$pred <- factor(ifelse(df.logit1$fitted.values > 0.49,
+                         'Yes', 'No'))
+```
+
+## 최적의 임계점 찾기
+
+### 최적의 임계점은 0.5가 나오지만 이 데이터는 의료 데이터이므로 다른 값이 더욱 최적의 임계점이 될 수 있다.
+
+```{r}
+library(mlbench)
+library(pROC)
+df$pred <- as.numeric(df$pred)
+df$chd <- as.numeric(df$chd)
+df$pred <- ifelse(df$pred == 1, df$pred <- 0, df$pred <- 1)
+df$chd <- ifelse(df$chd == 1, df$chd <- 0, df$chd <- 1)
+plot.roc(df$pred, df$chd, print.thres=T)
+```
+
+## 혼돈행렬에서 파생하는 지표 알아보기
+
+```{r}
+library(caret)
+df$pred <- factor(df$pred)
+df$chd <- factor(df$chd)
+confusionMatrix(df$pred, df$chd)
+```
+
+## 혼돈행렬
+
+### 이진 분류기의 분류 결과를 2X2 행렬로 표시한 행렬
+
+### 이진 분류기가 분류(예측)할 때, 얼마나 많이 헷갈렸는가를 나타냄
+
+```{r}
+tab <- table(actual = df$chd, predict = df$pred)
+tab
+
+TP <- tab[2, 2]
+TN <- tab[1, 1]
+FP <- tab[1, 2]
+FN <- tab[2, 1]
+```
+
+## 분류 모델의 성능 평가 지표
+
+### accuracy : 정확도
+
+### precision : 정밀도
+
+### recall : 재현율
+
+### F1.score : 정밀도와 재현율의 조화평균
+
+```{r}
+accuracy <- (TP + TN) / (TP + TN + FP + FN)
+precision <- TP / (TP + FP)
+recall <- TP / (TP + FN)
+F1.score <- (2 * precision * recall) / (precision + recall)
+
+accuracy
+precision
+recall
+F1.score
+```
+
+## ROC 곡선: 이진 분류의 결과에서 FP 비율과 TP 비율의 관계를 그린 곡선
+
+### AUC : ROC 곡선의 하부 면적으로 표현하는 성능 평가 지표
+
+### AUC가 1에 가까울수록 좋은 분류기로 판단할 수 있다.
+
+```{r}
+roc(chd ~ df.logit$fitted.values, data = df,
+    plot = T, col = 'tomato')
+```
+
+## 통계적으로 유의미한 변수들만 ROC 곡선 그리기
+
+```{r}
+roc(chd ~ df.logit1$fitted.values, data = df,
+    plot = T, col = 'tomato')
+```
+
+# 결론
+
+### 심혈관 질환 발병률에 가장 큰 영향을 끼치는 것은 가족력이며 나이, A형 성격 유형, 누적 담배, 저밀도 지방단백질 순으로 영향을 끼쳤다.
